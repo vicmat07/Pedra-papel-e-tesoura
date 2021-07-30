@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    height: 100%;
+}
+.align{
+    display: flex;
+}
+.player-options img, .enemy-options img{
+    max-width: 200px;
+    width: 150px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+.player-options img:hover, .enemy-options img:hover{
+    width: 200px;
+    opacity: 1;
+}
+.player-options,.enemy-options{
+    text-align: center;
+    width:50%;
+}
+h1{
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+}
