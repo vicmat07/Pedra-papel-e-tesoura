@@ -12,9 +12,11 @@ body,html{
     max-width: 200px;
     width: 150px;
     opacity: 0.3;
+}
+.player-options img{
     cursor: pointer;
 }
-.player-options img:hover, .enemy-options img:hover{
+.player-options img:hover{
     width: 200px;
     opacity: 1;
 }

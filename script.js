@@ -2,6 +2,8 @@ var el = document.querySelectorAll('.player-options div > img');
 var elEnemy=document.querySelectorAll('.enemy-options div > img');
 var Opt="", EOpt="";
 var vencedor=document.getElementById('vencedor');
+var PlacarPlayer=0, PlacarEnemy=0;
+var ElPlacarPlayer=document.getElementById("placarP"), ElPlacarEnemy=document.getElementById("placarE");
 
 function enemyOpt(){
     let randN=Math.floor(Math.random()*3);//gerar numero aletorio entre 0 e 2
@@ -21,24 +23,38 @@ function validarVitoria(){
         } else if (EOpt == "paper") {
             vencedor.innerHTML='pc ganhou';
             vencedor.style.color='red';
+            PlacarEnemy++;
+            ElPlacarEnemy.innerHTML=PlacarEnemy;
         } else if (EOpt == "scisor"){
             vencedor.innerHTML='vc ganhou';
+            PlacarPlayer++;
+            ElPlacarPlayer.innerHTML=PlacarPlayer;
         }
     } else if (Opt == "paper") {
         if(EOpt == "rock"){
             vencedor.innerHTML='vc ganhou';
+            PlacarPlayer++;
+            console.log(PlacarPlayer);
+            ElPlacarPlayer.innerHTML=PlacarPlayer;
         } else if (EOpt == "paper") {
             vencedor.innerHTML='empate!';
         } else if (EOpt == "scisor"){
             vencedor.innerHTML='pc ganhou';
             vencedor.style.color='red';
+            PlacarEnemy++;
+            ElPlacarEnemy.innerHTML=PlacarEnemy;
         }
     } else if (Opt == "scisor"){
         if(EOpt == "rock"){
             vencedor.innerHTML='pc ganhou';
             vencedor.style.color='red';
+            PlacarEnemy++;
+            ElPlacarEnemy.innerHTML=PlacarEnemy;
         } else if (EOpt == "paper") {
             vencedor.innerHTML='vc ganhou!';
+            PlacarPlayer++;
+            ElPlacarPlayer.innerHTML=PlacarPlayer;
+            console.log(PlacarPlayer);
         } else if (EOpt == "scisor"){
             vencedor.innerHTML='empate';
         }
