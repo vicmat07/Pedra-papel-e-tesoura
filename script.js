@@ -1,10 +1,11 @@
-var el = document.querySelectorAll('.player-options div > img');
-var elEnemy=document.querySelectorAll('.enemy-options div > img');
+var el = document.querySelectorAll('.player-options div > img'); //cria uma list com as imagens do jogador
+var elEnemy=document.querySelectorAll('.enemy-options div > img');//cria uma list com as imagens do pc
 var Opt="", EOpt="";
 var vencedor=document.getElementById('vencedor');
 var PlacarPlayer=0, PlacarEnemy=0;
 var ElPlacarPlayer=document.getElementById("placarP"), ElPlacarEnemy=document.getElementById("placarE");
 
+// enemyOpt gera a opçao do inimigo.
 function enemyOpt(){
     let randN=Math.floor(Math.random()*3);//gerar numero aletorio entre 0 e 2
     const enemyOptions=document.querySelectorAll('.enemy-options div');
@@ -15,6 +16,8 @@ function enemyOpt(){
         }
     }
 }
+
+//validarVitoria compara os resultados pra definir o vencedor da rodada
 function validarVitoria(){    
     vencedor.style.color='black';
     if (Opt == "rock"){
@@ -60,16 +63,20 @@ function validarVitoria(){
         }
     }
 }
+
+//reseta a opacidade das imagnes do jogador para a proxima rodada
 function resetarOpacidade(){
     for(i=0;i<el.length;i++){
         el[i].style.opacity=0.3;    
     }
 }
+//reseta a opacidade das imagens do inimigo para a proxima rodada
 function resetarOpacidadeEnemy(){
     for(i=0;i<elEnemy.length;i++){
         elEnemy[i].style.opacity=0.3;    
     }
 }
+
 for(i=0;i<el.length;i++){
     el[i].addEventListener('click',(t)=>{
         resetarOpacidade();
